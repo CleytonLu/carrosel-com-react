@@ -1,8 +1,6 @@
 import { Inter } from "@next/font/google";
 import { motion } from "framer-motion";
-import { type } from "os";
-import { useEffect, useRef, useState } from "react";
-import { transform } from "typescript";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +22,6 @@ export default function Home() {
   const estilo: any = useRef();
   console.log(estilo);
   let idx: number = 0;
-  let img;
 
   function carrosel() {
     idx++;
@@ -36,7 +33,7 @@ export default function Home() {
   }
   setInterval(carrosel, 2000);
 
-  const carousel: any = useRef();
+  const carousel: any | undefined  = useRef();
 
   const [width, setWidth] = useState(0);
 
